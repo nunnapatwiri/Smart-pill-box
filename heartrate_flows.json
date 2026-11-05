@@ -1,0 +1,259 @@
+[
+    {
+        "id": "b20f441974841d75",
+        "type": "tab",
+        "label": "HR WATCH",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7e04565b81725fd1",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.cpe.ku.ac.th",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "fbd73270735f91d2",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "",
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "0c86ccdceebc2972",
+        "type": "ui_tab",
+        "name": "ข้อมูลสุขภาพ",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "28d489d56b246f28",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-custom",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#e9fbff",
+                "baseFont": "Verdana,Verdana,Geneva,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#4B7930",
+                    "value": "#e9fbff",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#94e3fe",
+                    "edited": true
+                },
+                "page-backgroundColor": {
+                    "value": "#e7fafd",
+                    "edited": true
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#00bff3",
+                    "edited": true
+                },
+                "widget-backgroundColor": {
+                    "value": "#00bff3",
+                    "edited": true
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "Verdana,Verdana,Geneva,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "cb17fa5aefe1ccd6",
+        "type": "ui_group",
+        "name": "ข้อมูลสุขภาพ",
+        "tab": "0c86ccdceebc2972",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5f2e42fcd1e82c7c",
+        "type": "ui_gauge",
+        "z": "b20f441974841d75",
+        "name": "",
+        "group": "cb17fa5aefe1ccd6",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "อัตราการเต้นของหัวใจ",
+        "label": "BPM",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "200",
+        "colors": [
+            "#caf0fe",
+            "#94e3fe",
+            "#53d5fd"
+        ],
+        "seg1": "60",
+        "seg2": "100",
+        "diff": false,
+        "className": "",
+        "x": 620,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "fb8552cda666705a",
+        "type": "mqtt in",
+        "z": "b20f441974841d75",
+        "name": "",
+        "topic": "b6810503668/bpm",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "7e04565b81725fd1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 160,
+        "wires": [
+            [
+                "db63f262757c9c22"
+            ]
+        ]
+    },
+    {
+        "id": "db63f262757c9c22",
+        "type": "function",
+        "z": "b20f441974841d75",
+        "name": "ชีพจร",
+        "func": "let bpm = Number(msg.payload);\n\nif (bpm < 60) {\n    msg.text = \"ชีพจรต่ำกว่าปกติ\";\n}\nelse if (bpm <= 100) {\n    msg.text = \"ชีพจรปกติ\";\n}\nelse {\n    msg.text = \"ชีพจรเร็วเกินไป\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 160,
+        "wires": [
+            [
+                "1c981e6219c49738",
+                "5f2e42fcd1e82c7c"
+            ]
+        ]
+    },
+    {
+        "id": "1c981e6219c49738",
+        "type": "ui_template",
+        "z": "b20f441974841d75",
+        "group": "cb17fa5aefe1ccd6",
+        "name": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<div style=\"\nwidth:70%;\npadding:12px 0;\nborder-radius:20px;\ntext-align:center;\nfont-size:22px;\nfont-weight:600;\nbackground:#02bff3;\ncolor:#e8fafd;\nmargin:15px auto;\n\">\n    {{msg.text}}\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 580,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    }
+]
